@@ -119,16 +119,6 @@ identify_obs_in_polygon <- function(coords_df,
     ) %>%
     purrr::set_names(nm = cvars)
 
-  confuns::check_data_frame(
-    df = polygon_df,
-    var.class = var.class
-  )
-
-  confuns::check_data_frame(
-    df = coords_df,
-    var.class = var.class
-  )
-
   res <-
     sp::point.in.polygon(
       point.x = coords_df[[cvars[1]]],
